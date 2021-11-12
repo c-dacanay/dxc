@@ -16,10 +16,11 @@
         </div>
         <br>
         <div class="spacer"></div>
-        <small>TIME &amp; PLACE</small><h2 style="margin-top: .3em; margin-bottom: .3em">August 28, 2021</h2><p style="margin: 0">6PM @ <a href="https://www.greenpointloft.com/" target="_blank">The Greenpoint Loft</a>
+        <small>TIME &amp; PLACE</small><h2 style="margin-top: .3em; margin-bottom: 0; font-weight: 300;">August 28, 2021</h2><p style="margin: 0">6PM @ <a href="https://www.greenpointloft.com/" target="_blank">The Greenpoint Loft</a>
           <br>Brooklyn, NY<br></p>
-        <h2>↳<b>RSVP</b></h2>
-  <br><br>
+        <h2>➜<b> RSVP</b></h2>
+  <br>
+  <div class="nav">
           <h3>
     <ol><li><a href="schedule.html">SCHEDULE</a></li>
       <li><a href="travel.html">TRAVEL</a></li>
@@ -27,15 +28,84 @@
         <li><a href="gallery.html">GALLERY</a></li>
         <li><a href="things.html">THINGS TO DO</a></li>
         <li><a href="faq.html">FAQ</a></li></ol></h3>
-        <br><br><p>See you soon! ❤︎ <br><br> Contact us<br></p><br>
+        <br><br><p>See you soon! ❤︎ <br>   <br></p><br>
+      </div>
+  
+      <div class="mobile-only">
+        <p>This website is not optimized for mobile, sorry! Check it out on a browser to get more information.</p>
+      </div>
         <a href="#" rel="home_page"></a><br>
     </div>
   </div>
-<div class="content text-content">
+<div class="content gallery">
   <small>04</small>
 <h1>GALLERY</h1>
 <br>
-<p>ohuhuhuhu</p>
+<div id="modal">
+  <div id="modal-content">
+  <img id="modal-img" width="60%">
+  <div id="caption"></div>
+<span class="close">x</span>
 </div>
+</div>
+<div class="row">
+  <div class="column">
+    <img class="gimg" id="img1" alt="hehe" src="src/gallery/img1.jpg">
+    <img class="gimg" src="src/gallery/img2.jpg">
+    <img class="gimg" src="src/gallery/img3.jpg">
+    <img class="gimg" src="src/gallery/img4.jpg">
+    <img class="gimg" src="src/gallery/img5.jpg">
+  </div>
+  <div class="column">
+    <img class="gimg" src="src/gallery/img6.jpg">
+    <img class="gimg" src="src/gallery/img7.jpg">
+    <img class="gimg" src="src/gallery/img8.jpg">
+    <!-- <img class="gimg" src="src/gallery/img9.jpg"> -->
+    <img class="gimg" src="src/gallery/img10.jpg">
+    <!-- <img class="gimg" src="src/gallery/img12.jpg"> -->
+  </div>
+  <div class="column">
+    <img class="gimg" src="src/gallery/img11.jpg">
+    <img class="gimg" src="src/gallery/img13.jpg">
+    <img class="gimg" src="src/gallery/img14.jpg">
+    <img class="gimg" src="src/gallery/img15.jpg">
+  </div>
+</div>
+
+</div>
+
+<script>
+  let modal = document.getElementById("modal")
+  let imgs = document.getElementsByClassName("gimg");
+  let sampleimg = document.getElementById("img1")
+  let content = document.getElementById("modal-img")
+  let captionText = document.getElementById("caption")
+
+
+  sampleimg.onclick = function() {
+    modal.style.display = "block";
+    content.src = this.src
+    console.log(this.src)
+    captionText.innerHTML = this.alt;
+  }
+  console.log(imgs)
+
+
+  modal.onclick = function() {
+    modal.style.display = "none";
+  }
+
+// function clickImg(){
+//  console.log(a)
+// }
+
+// for (var i = 0; i < imgs.length; i++) {
+//    imgs[i].addEventListener('click', () => {
+//      console.log(imgs[i].src)
+//      clickImg()
+//    });
+// }
+
+</script>
   </body>
 </html>

@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 html,
@@ -7,15 +6,14 @@ body {
   margin: 0;
   --color-main: rgba(255, 202, 0, 1);
   --color-main-alpha: rgba(255, 202, 0, .9);
-  /* --color-second: rgba(40, 68, 141, 1); */
   --color-second: rgba(61, 108, 186, 1);
-  /* --color-third: rgba(245, 64, 71, 1); */
   --color-third: rgba(161, 21, 4, 1);
   --color-sub: rgba(32, 24, 27, 1);
   --color-sub-alpha: rgba(32, 24, 27, .7);
 
   --font-main: 'Rubik', sans-serif; 
   --font-second: 'Space Mono', monospace;
+  --font-beauty: 'Messapia', sans-serif;
 }
 
 
@@ -33,14 +31,19 @@ body {
 
 .content h2 {
   color: var(--color-third);
-  margin-bottom: .1em;
+  margin-bottom: 0;
+}
+
+.text-content, .gallery {
+  margin-left: 28vw;
+  /* margin-left: max(50%, 30%); */
+  padding: 3em;
 }
 
 .text-content {
   width: 70vh;
-  margin-left: 30vw;
-  padding: 3em;
 }
+
 
 .grid-container {
   display: grid;
@@ -73,7 +76,8 @@ body {
 #menu {
 z-index: 2;
 background-color: var(--color-main-alpha);
-width: 30vw;
+width: 22vw;
+min-width: 350px;
 position: fixed;
 top: 0;
 left: 0;
@@ -82,13 +86,13 @@ height: 100vh;
 
 .menu-title {
   font-family: var(--font-second);
-  /* font-weight: 700; */
-  font-size: 24px;
+  font-weight: 700;
+  font-size: 20px;
   text-align: center;
 }
 
 .menu-title a {
-  color: var(--color-sub);
+  color: var(--color-sub-alpha);
 }
 
 .menu-content {
@@ -103,7 +107,7 @@ height: 100vh;
   z-index: 5;
   position: absolute;
   top: 5em;
-  left: 33%;
+  left: 45vh;
 }
 
 .announce h1 {
@@ -111,6 +115,10 @@ height: 100vh;
   padding: .2em;
   color: var(--color-third);
   background-color: white;
+}
+
+.nav {
+  font-weight: lighter;
 }
 
 .credit {
@@ -126,7 +134,7 @@ height: 100vh;
 }
 
 .spacer {
-  height: 5em;
+  height: 2.5em;
 }
 
 #molly {
@@ -167,14 +175,15 @@ h1 a{
 h2 {
   color: var(--color-sub);
   font-family: var(--font-main);
-  font-size: 24px;
+  font-size: 30px;
 }
 
 h3 {
   color: var(--color-sub);
   font-family: var(--font-main);
   font-size: 24px;
-  line-height: 1.5em;
+  font-weight: 400;
+  line-height: 1.25em;
 }
 
 ol {
@@ -187,11 +196,79 @@ p, ul {
   font-size: 18px;
   line-height: 1.5em;
 }
-small {
+small, #caption {
   font-family: var(--font-second);
   color: var(--color-sub-alpha);
-  font-size: 18px;
+  font-size: 16px;
 }
+
+/* gallery */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 35%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+#modal {
+  display: none;
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: var(--color-main-alpha); /* Black w/ opacity */
+}
+
+#modal-content {
+  padding-left: 35vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#modal-img {
+  margin: auto;
+  display: block;
+  max-width: 1000px;
+  padding: 1em;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  text-align: center;
+  color: var(--color-main);
+}
+
+/* .column img:active{
+  color: #424242; 
+-webkit-transition: all .3s ease-in;
+-moz-transition: all .3s ease-in;
+-ms-transition: all .3s ease-in;
+-o-transition: all .3s ease-in;
+transition: all .3s ease-in;
+opacity: 1;
+transform: scale(2);
+-ms-transform: scale(2);
+-webkit-transform: scale(2);
+} */
 
 @media only screen
 and (max-width: 600px)
