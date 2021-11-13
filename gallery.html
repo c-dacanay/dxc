@@ -43,14 +43,14 @@
 <br>
 <div id="modal">
   <div id="modal-content">
-  <img id="modal-img" width="60%">
+  <img id="modal-img">
   <div id="caption"></div>
 <span class="close">x</span>
 </div>
 </div>
 <div class="row">
   <div class="column">
-    <img class="gimg" id="img1" alt="hehe" src="src/gallery/img1.jpg">
+    <img class="gimg"  src="src/gallery/img1.jpg">
     <img class="gimg" src="src/gallery/img2.jpg">
     <img class="gimg" src="src/gallery/img3.jpg">
     <img class="gimg" src="src/gallery/img4.jpg">
@@ -75,36 +75,26 @@
 </div>
 
 <script>
-  let modal = document.getElementById("modal")
+  let modal = document.getElementById("modal");
   let imgs = document.getElementsByClassName("gimg");
-  let sampleimg = document.getElementById("img1")
-  let content = document.getElementById("modal-img")
-  let captionText = document.getElementById("caption")
+  let content = document.getElementById("modal-img");
+  let captionText = document.getElementById("caption");
 
 
-  sampleimg.onclick = function() {
+  for (var i=0; i < imgs.length; i++) {
+  imgs[i].onclick = function() {
     modal.style.display = "block";
     content.src = this.src
     console.log(this.src)
     captionText.innerHTML = this.alt;
   }
+}
   console.log(imgs)
 
 
   modal.onclick = function() {
     modal.style.display = "none";
   }
-
-// function clickImg(){
-//  console.log(a)
-// }
-
-// for (var i = 0; i < imgs.length; i++) {
-//    imgs[i].addEventListener('click', () => {
-//      console.log(imgs[i].src)
-//      clickImg()
-//    });
-// }
 
 </script>
   </body>
