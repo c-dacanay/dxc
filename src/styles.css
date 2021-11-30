@@ -253,6 +253,9 @@ small, #caption {
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
 #caption {
   margin: auto;
+  position:absolute;
+  top: 2%;
+  left: 61vh;
   text-align: center;
   color: var(--color-main);
 }
